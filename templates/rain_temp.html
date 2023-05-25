@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   
+    <div class="hero-image">
+      <div class="hero-text">   
+	
+        <h1 style="font-size:30px;">average_rain_fall_mm_per_year and temperature Prediction</h1>
+	
+            <h3>  </h3>
+      </div>
+    </div>
+
+     <style>
+        
+        body, html {
+          height: 100%;
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .hero-image {
+          background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/carback.jpg');
+          height: 50%;
+          background-position: bottom;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+        }
+        
+        .hero-text {
+          text-align: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+        }
+        
+    </style>
+
+
+    <div style="color:	rgb(255, 219, 88)">
+        <form action="{{ url_for('rtpredict')}}" method="post">
+            <h3>select the country</h3>
+            <select name="Country" id="first" required="required">
+                <option value="Argentina">Argentina</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Canada">Canada</option>
+                <option value="India">India</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+            </select>
+            <h3>Enter year: </h3><br><input id="second" name="Year" required="required">
+        
+            <br><br><button id="sub" type="submit ">Predict</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3 style="color:black">{{ prediction_text1 }}<h3>
+            <h3 style="color:black"> {{ prediction_text2 }}<h3><br><br>
+    </div>
+
+
+
+    <style>
+	body {
+            background-color: white;
+            text-align: center;
+            padding: 0px;
+	    font-family: cursive;
+        }
+
+        #research {
+            font-size: 18px;
+            width: 200px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            text-align: center;
+            background-color: rgb(1, 54, 48);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: white;
+        }
+        
+        #research {
+            width: 150px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: white;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: #FFD700;
+        }
+        
+        #sub {
+            background-color: #f78205;
+            font-family:'Courier New', monospace;
+            font-weight: bold;
+            width: 180px;
+            height: 60px;
+            text-align: center;
+            border-radius: 20px;
+            font-size: 18px;
+            color: white;
+        }
+        
+        #sub:hover {
+            background-color: #cf1804;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
